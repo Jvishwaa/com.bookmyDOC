@@ -13,10 +13,13 @@
         android:theme="@style/Theme.BookmyDOC"
         tools:targetApi="31">
         <activity
-            android:name=".PhoneLoginActivity"
+            android:name=".OnBoardingActivity"
             android:exported="false" />
         <activity
             android:name=".OtpVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneLoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
