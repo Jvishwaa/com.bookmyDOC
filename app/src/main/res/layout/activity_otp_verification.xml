@@ -22,7 +22,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:srcCompat="@drawable/scr_bg" />
+                android:src="@drawable/scr_bg" />
 
 
         </LinearLayout>

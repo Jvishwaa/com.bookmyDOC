@@ -55,7 +55,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
-                Toast.makeText(getApplicationContext(), "Verification failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Verification failed: "+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
             @Override

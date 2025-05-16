@@ -165,7 +165,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
                 otpFields[i].setText(String.valueOf(otp.charAt(i)));
             }
         });
-        registerReceiver(smsReceiver, new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION));
+//        registerReceiver(smsReceiver, new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION));
     }
 
     @Override
