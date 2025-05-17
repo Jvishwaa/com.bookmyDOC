@@ -3,133 +3,223 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_bg"
-    android:padding="16dp">
+    android:background="@drawable/gradient_bg">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_gravity="bottom">
 
-        <!-- Profile Image -->
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileImageView"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"
-            android:layout_marginBottom="20dp"/>
-
-        <Button
-            android:id="@+id/selectImageBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Choose Profile Picture"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/primary"
-            android:textColor="#fff"
-            android:padding="8dp"/>
-
-        <!-- Full Name -->
-        <EditText
-            android:id="@+id/fullNameInput"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Full Name"
-            android:inputType="textPersonName"
-            android:padding="12dp"
-            android:background="@drawable/rounded_edittext"
-            android:layout_marginTop="20dp"/>
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="32dp">
 
-        <!-- Gender RadioGroup -->
-        <RadioGroup
-            android:id="@+id/genderGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            <!-- Profile Image -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/profile_lu"
+                android:layout_marginBottom="20dp"/>
 
-            <RadioButton
-                android:id="@+id/genderMale"
+            <Button
+                android:id="@+id/selectImageBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Male"
-                android:checked="true"/>
+                android:text="Choose Profile Picture"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/primary"
+                android:textColor="#fff"
+                android:visibility="gone"
+                android:padding="8dp"/>
 
-            <RadioButton
-                android:id="@+id/genderFemale"
+            <!-- Full Name -->
+            <EditText
+                android:id="@+id/fullNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext"
+                android:layout_marginTop="20dp"/>
+
+            <!-- Gender RadioGroup -->
+            <RadioGroup
+                android:id="@+id/genderGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <RadioButton
+                    android:id="@+id/genderMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/genderFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:layout_marginStart="24dp"/>
+
+                <RadioButton
+                    android:id="@+id/genderOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other"
+                    android:layout_marginStart="24dp"/>
+            </RadioGroup>
+
+            <!-- Date of Birth -->
+            <TextView
+                android:id="@+id/dobLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Female"
-                android:layout_marginStart="24dp"/>
+                android:text="Date of Birth"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
 
-            <RadioButton
-                android:id="@+id/genderOther"
+            <TextView
+                android:id="@+id/dobInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Date"
+                android:textColor="@color/primary"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext"
+                android:gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:drawableTint="@color/primary"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Age (calculated) -->
+            <EditText
+                android:id="@+id/ageInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:enabled="false"
+                android:background="@drawable/rounded_edittext"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email (optional)"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/saveProfileBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Profile"
+                android:backgroundTint="@color/primary"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                android:padding="14dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pop_up_st"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/camera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Other"
-                android:layout_marginStart="24dp"/>
-        </RadioGroup>
+                android:orientation="horizontal"
+                android:layout_margin="16dp"
+                android:gravity="center_vertical">
 
-        <!-- Date of Birth -->
-        <TextView
-            android:id="@+id/dobLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date of Birth"
-            android:textColor="@color/primary"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:tint="@color/white"
+                    android:src="@drawable/camera"
+                    android:layout_marginBottom="20dp"/>
 
-        <TextView
-            android:id="@+id/dobInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select Date"
-            android:textColor="@color/primary"
-            android:padding="12dp"
-            android:background="@drawable/rounded_edittext"
-            android:gravity="center_vertical"
-            android:drawableEnd="@drawable/ic_calendar"
-            android:drawableTint="@color/primary"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="8dp"/>
 
-        <!-- Age (calculated) -->
-        <EditText
-            android:id="@+id/ageInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Age"
-            android:enabled="false"
-            android:background="@drawable/rounded_edittext"
-            android:padding="12dp"
-            android:layout_marginTop="12dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="      Take Photo      "
+                    android:textColor="@color/primary"
+                    android:padding="12dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="center_vertical"
+                    android:drawableTint="@color/primary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginTop="8dp"/>
 
-        <!-- Email -->
-        <EditText
-            android:id="@+id/emailInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email (optional)"
-            android:inputType="textEmailAddress"
-            android:padding="12dp"
-            android:background="@drawable/rounded_edittext"
-            android:layout_marginTop="16dp"/>
+            </LinearLayout>
 
-        <!-- Save Button -->
-        <Button
-            android:id="@+id/saveProfileBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Profile"
-            android:backgroundTint="@color/primary"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp"
-            android:padding="14dp"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="16dp"
+                android:gravity="center_vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:tint="@color/white"
+                    android:src="@drawable/gallery"
+                    android:layout_marginBottom="20dp"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select from Gallery"
+                    android:textColor="@color/primary"
+                    android:padding="12dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="center_vertical"
+                    android:drawableTint="@color/primary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginTop="8dp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </ScrollView>
